@@ -10,6 +10,7 @@ namespace Snake_Game
     {
         private const int StartingElementsCount = 5;
         private  int MaximumSnakeSpeed = 100;
+        private int MinSnakeSpeed = 0;
 
         public int StartingXPosition { get; set; }
 
@@ -26,8 +27,9 @@ namespace Snake_Game
             Random random = new Random();
             this.StartingXPosition = random.Next(borderOffset, boardHeight - borderOffset);
             this.StartingYPosition = random.Next(borderOffset, boardWidth / 2);
-            this.Speed = MaximumSnakeSpeed;
+            this.Speed = MinSnakeSpeed;
             this.Elements = InitialCreate();
+            
         }
         private Queue<Position> InitialCreate()
         {
@@ -47,6 +49,7 @@ namespace Snake_Game
         public bool IsBitten() => this.Elements.Any(x => x.Col == this.NewHeadPosition.Col && x.Row == this.NewHeadPosition.Row);
 
         public int GetReversedSpeed() => MaximumSnakeSpeed = this.Speed;
+
 
         
     }

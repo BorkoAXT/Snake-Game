@@ -31,6 +31,7 @@ Snake snake = new Snake(BordersOffset, BoardHeight, BoardWidth);
 //DrawNewFood();
 //PlayGame();
 DrawScorePanel();
+DrawNewFood();
  void SetWindowProperties()
 {
     Console.CursorVisible = false;
@@ -68,4 +69,8 @@ void DrawScorePanel()
 
     Console.SetCursorPosition(0, BoardHeight - ScorePanelTextPosition);
     Console.WriteLine(scorePanel);
+}
+void DrawNewFood()
+{
+    Console.WriteLine(food);
 }
